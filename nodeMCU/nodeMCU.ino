@@ -5,7 +5,7 @@
 SoftwareSerial NodeSerial(D7, D8); // RX | TX
  
 String msg,URL; 
-const char* ssid = "ArduiNug";
+const char* ssid = "ArduiNug-M";
 const char* password = "#ravelinug";
  
 void setup () { 
@@ -27,7 +27,7 @@ void loop() {
       Serial.println("Conected");  
       HTTPClient http;  //Declare an object of class HTTPClient
       msg = NodeSerial.readStringUntil('\n');
-      URL = "http://192.168.0.12/";
+      URL = "http://192.168.43.237/";
       URL += msg;
       http.begin(URL);  //Specify request destination
       int httpCode = http.GET();                                                                  //Send the request
