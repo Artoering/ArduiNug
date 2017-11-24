@@ -20,13 +20,12 @@ void setup () {
   } 
 }
  
-void loop() {
-
-  while (NodeSerial.available()) {
+void loop() { 
+  while (NodeSerial.available()) { 
     if (WiFi.status() == WL_CONNECTED) { //Check WiFi connection status
       Serial.println("Conected");  
       HTTPClient http;  //Declare an object of class HTTPClient
-      msg = NodeSerial.readStringUntil('\n');
+      msg = NodeSerial.readStringUntil('\n'); 
       URL = "http://192.168.43.237/";
       URL += msg;
       http.begin(URL);  //Specify request destination
@@ -43,8 +42,7 @@ void loop() {
 
     }
   }
-  delay(500);    //get a request every 30 seconds
- 
+  delay(500);    //get a request every 30 seconds  
 }
 
 
